@@ -6,30 +6,25 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1D5744E52DBCFA08001AE8CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5744DC2DBCFA08001AE8CD /* Main.storyboard */; };
+		1D5744E62DBCFA08001AE8CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5744DF2DBCFA08001AE8CD /* Assets.xcassets */; };
+		1D5744E82DBCFA08001AE8CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5744E22DBCFA08001AE8CD /* LaunchScreen.storyboard */; };
+		1D5744E92DBCFA08001AE8CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5744D92DBCFA08001AE8CD /* HomeViewController.swift */; };
+		1D5744EA2DBCFA08001AE8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5744DE2DBCFA08001AE8CD /* AppDelegate.swift */; };
+		1D5744EB2DBCFA08001AE8CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5744E32DBCFA08001AE8CD /* SceneDelegate.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1D3AD7D02DBBDD78005EA361 /* ios-learned.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-learned.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D5744D92DBCFA08001AE8CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1D5744DB2DBCFA08001AE8CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1D5744DE2DBCFA08001AE8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D5744DF2DBCFA08001AE8CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D5744E02DBCFA08001AE8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D5744E12DBCFA08001AE8CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D5744E32DBCFA08001AE8CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1D3AD7E22DBBDD7A005EA361 /* Exceptions for "ios-learned" folder in "ios-learned" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 1D3AD7CF2DBBDD78005EA361 /* ios-learned */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		1D3AD7D22DBBDD78005EA361 /* ios-learned */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				1D3AD7E22DBBDD7A005EA361 /* Exceptions for "ios-learned" folder in "ios-learned" target */,
-			);
-			path = "ios-learned";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1D3AD7CD2DBBDD78005EA361 /* Frameworks */ = {
@@ -45,7 +40,7 @@
 		1D3AD7C72DBBDD78005EA361 = {
 			isa = PBXGroup;
 			children = (
-				1D3AD7D22DBBDD78005EA361 /* ios-learned */,
+				1D5744E42DBCFA08001AE8CD /* ios-learned */,
 				1D3AD7D12DBBDD78005EA361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +51,36 @@
 				1D3AD7D02DBBDD78005EA361 /* ios-learned.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1D5744DA2DBCFA08001AE8CD /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				1D5744D92DBCFA08001AE8CD /* HomeViewController.swift */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
+		1D5744DD2DBCFA08001AE8CD /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				1D5744DA2DBCFA08001AE8CD /* tabbar */,
+				1D5744DC2DBCFA08001AE8CD /* Main.storyboard */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		1D5744E42DBCFA08001AE8CD /* ios-learned */ = {
+			isa = PBXGroup;
+			children = (
+				1D5744DD2DBCFA08001AE8CD /* ui */,
+				1D5744DE2DBCFA08001AE8CD /* AppDelegate.swift */,
+				1D5744DF2DBCFA08001AE8CD /* Assets.xcassets */,
+				1D5744E02DBCFA08001AE8CD /* Info.plist */,
+				1D5744E22DBCFA08001AE8CD /* LaunchScreen.storyboard */,
+				1D5744E32DBCFA08001AE8CD /* SceneDelegate.swift */,
+			);
+			path = "ios-learned";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +97,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				1D3AD7D22DBBDD78005EA361 /* ios-learned */,
 			);
 			name = "ios-learned";
 			packageProductDependencies = (
@@ -122,6 +144,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5744E52DBCFA08001AE8CD /* Main.storyboard in Resources */,
+				1D5744E62DBCFA08001AE8CD /* Assets.xcassets in Resources */,
+				1D5744E82DBCFA08001AE8CD /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +157,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5744E92DBCFA08001AE8CD /* HomeViewController.swift in Sources */,
+				1D5744EA2DBCFA08001AE8CD /* AppDelegate.swift in Sources */,
+				1D5744EB2DBCFA08001AE8CD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1D5744DC2DBCFA08001AE8CD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D5744DB2DBCFA08001AE8CD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1D5744E22DBCFA08001AE8CD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D5744E12DBCFA08001AE8CD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D3AD7E42DBBDD7A005EA361 /* Debug */ = {
