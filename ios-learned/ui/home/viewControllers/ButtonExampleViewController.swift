@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ButtonExampleViewController: UIViewController {
+class ButtonExampleViewController: BaseViewController {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -139,6 +139,20 @@ class ButtonExampleViewController: UIViewController {
         textButton.snp.makeConstraints { make in
             make.top.equalTo(previousView.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(16)
+        }
+        previousView = textButton
+        
+        // 7. 按下效果按钮
+        let pressEffectButton = createExampleSection(
+            title: "按下效果按钮",
+            description: "具有按下缩放效果的按钮",
+            buttonTitle: "按下效果",
+            buttonStyle: .pressEffect
+        )
+        contentView.addSubview(pressEffectButton)
+        pressEffectButton.snp.makeConstraints { make in
+            make.top.equalTo(previousView.snp.bottom).offset(20)
+            make.left.right.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().offset(-20)
         }
     }
@@ -228,6 +242,15 @@ class ButtonExampleViewController: UIViewController {
         case .text:
             button.setTitleColor(UIColor.themeColor, for: .normal)
             button.backgroundColor = .clear
+            
+        case .pressEffect:
+            button.setTitleColor(.white, for: .normal)
+            button.backgroundColor = UIColor.themeColor
+            button.layer.cornerRadius = 8
+            
+            // 添加按下和抬起的事件
+            button.addTarget(self, action: #selector(buttonTouchDown(_:)), for: .touchDown)
+            button.addTarget(self, action: #selector(buttonTouchUp(_:)), for: [.touchUpInside, .touchUpOutside, .touchCancel])
         }
         
         button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
@@ -242,6 +265,18 @@ class ButtonExampleViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    @objc private func buttonTouchDown(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1) {
+            sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }
+    }
+    
+    @objc private func buttonTouchUp(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.1) {
+            sender.transform = CGAffineTransform.identity
+        }
+    }
+    
 }
 
 enum ButtonStyle {
@@ -251,4 +286,5 @@ enum ButtonStyle {
     case round
     case icon
     case text
+    case pressEffect
 }

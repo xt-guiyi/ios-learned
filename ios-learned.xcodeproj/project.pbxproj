@@ -24,6 +24,32 @@
 		9E0DBF922E5A4338001284FE /* PageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF902E5A4338001284FE /* PageHeaderView.swift */; };
 		9E0DBF942E5A4FFB001284FE /* ButtonExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF932E5A4FFB001284FE /* ButtonExampleViewController.swift */; };
 		9E0DBF972E5A5724001284FE /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF952E5A5724001284FE /* CustomNavigationBar.swift */; };
+		9E0DBF992E5AF3B4001284FE /* TextExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF982E5AF3B4001284FE /* TextExampleViewController.swift */; };
+		9E0DBF9E2E5AF4FC001284FE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF9D2E5AF4FC001284FE /* BaseViewController.swift */; };
+		9E0DBFA12E5B029D001284FE /* ExpandableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF9F2E5B029D001284FE /* ExpandableTextView.swift */; };
+		9E0DBFA32E5B0926001284FE /* ImageExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFA22E5B0926001284FE /* ImageExampleViewController.swift */; };
+		9E0DBFA52E5B0FE4001284FE /* InputExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFA42E5B0FE4001284FE /* InputExampleViewController.swift */; };
+		9E0DBFA72E5B1276001284FE /* RadioButtonExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFA62E5B1276001284FE /* RadioButtonExampleViewController.swift */; };
+		9E0DBFA92E5B13BA001284FE /* SwitchExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFA82E5B13BA001284FE /* SwitchExampleViewController.swift */; };
+		9E0DBFAB2E5B13C1001284FE /* CheckboxExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFAA2E5B13C1001284FE /* CheckboxExampleViewController.swift */; };
+		9E0DBFAD2E5B1899001284FE /* BottomNavigationExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFAC2E5B1899001284FE /* BottomNavigationExampleViewController.swift */; };
+		9E0DBFAF2E5B1C23001284FE /* StackViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFAE2E5B1C23001284FE /* StackViewExampleViewController.swift */; };
+		9E0DBFB12E5B23DB001284FE /* ContextMenuExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFB02E5B23DB001284FE /* ContextMenuExampleViewController.swift */; };
+		9E0DBFC52E5B2F07001284FE /* CustomConfirmDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFC02E5B2F07001284FE /* CustomConfirmDialog.swift */; };
+		9E0DBFC62E5B2F07001284FE /* CustomDialogExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFC12E5B2F07001284FE /* CustomDialogExampleViewController.swift */; };
+		9E0DBFC72E5B2F07001284FE /* CustomAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFBF2E5B2F07001284FE /* CustomAlertDialog.swift */; };
+		9E0DBFC82E5B2F07001284FE /* CustomInputDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFC22E5B2F07001284FE /* CustomInputDialog.swift */; };
+		9E0DBFC92E5B2F07001284FE /* CustomLoadingDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFC32E5B2F07001284FE /* CustomLoadingDialog.swift */; };
+		9E0DBFCA2E5B2F07001284FE /* CustomStyledDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFC42E5B2F07001284FE /* CustomStyledDialogs.swift */; };
+		9E0DBFCC2E5B3429001284FE /* BottomSheetExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFCB2E5B3429001284FE /* BottomSheetExampleViewController.swift */; };
+		9E0DBFCF2E5B3D4A001284FE /* ToastExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFCE2E5B3D4A001284FE /* ToastExampleViewController.swift */; };
+		9E0DBFD12E5B40FF001284FE /* ProgressBarExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFD02E5B40FF001284FE /* ProgressBarExampleViewController.swift */; };
+		9E0DBFD32E5B4367001284FE /* PagerViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFD22E5B4367001284FE /* PagerViewExampleViewController.swift */; };
+		9E0DBFD52E5B5A7D001284FE /* TableViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFD42E5B5A7D001284FE /* TableViewExampleViewController.swift */; };
+		9E0DBFD72E5B5BE6001284FE /* CollectionViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFD62E5B5BE6001284FE /* CollectionViewExampleViewController.swift */; };
+		9E0DBFD92E5B5E46001284FE /* ViewPagerExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFD82E5B5E46001284FE /* ViewPagerExampleViewController.swift */; };
+		9E0DBFDB2E5B6367001284FE /* WebViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFDA2E5B6367001284FE /* WebViewExampleViewController.swift */; };
+		9E0DBFDD2E5B6864001284FE /* AdvancedControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFDC2E5B6864001284FE /* AdvancedControlsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +72,32 @@
 		9E0DBF902E5A4338001284FE /* PageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeaderView.swift; sourceTree = "<group>"; };
 		9E0DBF932E5A4FFB001284FE /* ButtonExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExampleViewController.swift; sourceTree = "<group>"; };
 		9E0DBF952E5A5724001284FE /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		9E0DBF982E5AF3B4001284FE /* TextExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBF9D2E5AF4FC001284FE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9E0DBF9F2E5B029D001284FE /* ExpandableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTextView.swift; sourceTree = "<group>"; };
+		9E0DBFA22E5B0926001284FE /* ImageExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFA42E5B0FE4001284FE /* InputExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFA62E5B1276001284FE /* RadioButtonExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFA82E5B13BA001284FE /* SwitchExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFAA2E5B13C1001284FE /* CheckboxExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFAC2E5B1899001284FE /* BottomNavigationExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFAE2E5B1C23001284FE /* StackViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFB02E5B23DB001284FE /* ContextMenuExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFBF2E5B2F07001284FE /* CustomAlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertDialog.swift; sourceTree = "<group>"; };
+		9E0DBFC02E5B2F07001284FE /* CustomConfirmDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConfirmDialog.swift; sourceTree = "<group>"; };
+		9E0DBFC12E5B2F07001284FE /* CustomDialogExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialogExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFC22E5B2F07001284FE /* CustomInputDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputDialog.swift; sourceTree = "<group>"; };
+		9E0DBFC32E5B2F07001284FE /* CustomLoadingDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingDialog.swift; sourceTree = "<group>"; };
+		9E0DBFC42E5B2F07001284FE /* CustomStyledDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStyledDialogs.swift; sourceTree = "<group>"; };
+		9E0DBFCB2E5B3429001284FE /* BottomSheetExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFCE2E5B3D4A001284FE /* ToastExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFD02E5B40FF001284FE /* ProgressBarExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFD22E5B4367001284FE /* PagerViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFD42E5B5A7D001284FE /* TableViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFD62E5B5BE6001284FE /* CollectionViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFD82E5B5E46001284FE /* ViewPagerExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPagerExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFDA2E5B6367001284FE /* WebViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExampleViewController.swift; sourceTree = "<group>"; };
+		9E0DBFDC2E5B6864001284FE /* AdvancedControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedControlsViewController.swift; sourceTree = "<group>"; };
 		DE41D1BA0E479416F6B6FE32 /* Pods-ios-learned.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-learned.debug.xcconfig"; path = "Target Support Files/Pods-ios-learned/Pods-ios-learned.debug.xcconfig"; sourceTree = "<group>"; };
 		F0EBC43438681C129F9564AE /* Pods-ios-learned.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-learned.release.xcconfig"; path = "Target Support Files/Pods-ios-learned/Pods-ios-learned.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +152,6 @@
 		1D5744DD2DBCFA08001AE8CD /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				9E0DBF8C2E5A3F9B001284FE /* components */,
 				9E0DBF5B2E5A1329001284FE /* third */,
 				9E0DBF5A2E5A1306001284FE /* function */,
 				9E0DBF572E5A12DF001284FE /* home */,
@@ -112,7 +163,9 @@
 		1D5744E42DBCFA08001AE8CD /* ios-learned */ = {
 			isa = PBXGroup;
 			children = (
+				9E0DBF9A2E5AF3EB001284FE /* base */,
 				9E0DBF7B2E5A277F001284FE /* extensions */,
+				9E0DBF8C2E5A3F9B001284FE /* views */,
 				1D5744DD2DBCFA08001AE8CD /* ui */,
 				1D5744DE2DBCFA08001AE8CD /* AppDelegate.swift */,
 				9E0DBF552E5A0F9E001284FE /* SceneDelegate.swift */,
@@ -133,7 +186,6 @@
 		9E0DBF572E5A12DF001284FE /* home */ = {
 			isa = PBXGroup;
 			children = (
-				9E0DBF812E5A3A4B001284FE /* views */,
 				9E0DBF5D2E5A1382001284FE /* viewControllers */,
 			);
 			path = home;
@@ -168,6 +220,25 @@
 		9E0DBF5D2E5A1382001284FE /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9E0DBFDC2E5B6864001284FE /* AdvancedControlsViewController.swift */,
+				9E0DBFDA2E5B6367001284FE /* WebViewExampleViewController.swift */,
+				9E0DBFD82E5B5E46001284FE /* ViewPagerExampleViewController.swift */,
+				9E0DBFD62E5B5BE6001284FE /* CollectionViewExampleViewController.swift */,
+				9E0DBFD42E5B5A7D001284FE /* TableViewExampleViewController.swift */,
+				9E0DBFD22E5B4367001284FE /* PagerViewExampleViewController.swift */,
+				9E0DBFD02E5B40FF001284FE /* ProgressBarExampleViewController.swift */,
+				9E0DBFCE2E5B3D4A001284FE /* ToastExampleViewController.swift */,
+				9E0DBFCB2E5B3429001284FE /* BottomSheetExampleViewController.swift */,
+				9E0DBFC12E5B2F07001284FE /* CustomDialogExampleViewController.swift */,
+				9E0DBFB02E5B23DB001284FE /* ContextMenuExampleViewController.swift */,
+				9E0DBFAE2E5B1C23001284FE /* StackViewExampleViewController.swift */,
+				9E0DBFAC2E5B1899001284FE /* BottomNavigationExampleViewController.swift */,
+				9E0DBFAA2E5B13C1001284FE /* CheckboxExampleViewController.swift */,
+				9E0DBFA82E5B13BA001284FE /* SwitchExampleViewController.swift */,
+				9E0DBFA62E5B1276001284FE /* RadioButtonExampleViewController.swift */,
+				9E0DBFA42E5B0FE4001284FE /* InputExampleViewController.swift */,
+				9E0DBFA22E5B0926001284FE /* ImageExampleViewController.swift */,
+				9E0DBF982E5AF3B4001284FE /* TextExampleViewController.swift */,
 				9E0DBF932E5A4FFB001284FE /* ButtonExampleViewController.swift */,
 				9E0DBF6E2E5A14D4001284FE /* HomeRootViewController.swift */,
 			);
@@ -200,13 +271,6 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
-		9E0DBF812E5A3A4B001284FE /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
 		9E0DBF822E5A3A5B001284FE /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,14 +295,16 @@
 			path = listView;
 			sourceTree = "<group>";
 		};
-		9E0DBF8C2E5A3F9B001284FE /* components */ = {
+		9E0DBF8C2E5A3F9B001284FE /* views */ = {
 			isa = PBXGroup;
 			children = (
+				9E0DBFCD2E5B35CF001284FE /* dialog */,
+				9E0DBFA02E5B029D001284FE /* expandableTextView */,
 				9E0DBF962E5A5724001284FE /* navigationBar */,
 				9E0DBF912E5A4338001284FE /* headerView */,
 				9E0DBF8B2E5A3F9B001284FE /* listView */,
 			);
-			path = components;
+			path = views;
 			sourceTree = "<group>";
 		};
 		9E0DBF912E5A4338001284FE /* headerView */ = {
@@ -255,6 +321,34 @@
 				9E0DBF952E5A5724001284FE /* CustomNavigationBar.swift */,
 			);
 			path = navigationBar;
+			sourceTree = "<group>";
+		};
+		9E0DBF9A2E5AF3EB001284FE /* base */ = {
+			isa = PBXGroup;
+			children = (
+				9E0DBF9D2E5AF4FC001284FE /* BaseViewController.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		9E0DBFA02E5B029D001284FE /* expandableTextView */ = {
+			isa = PBXGroup;
+			children = (
+				9E0DBF9F2E5B029D001284FE /* ExpandableTextView.swift */,
+			);
+			path = expandableTextView;
+			sourceTree = "<group>";
+		};
+		9E0DBFCD2E5B35CF001284FE /* dialog */ = {
+			isa = PBXGroup;
+			children = (
+				9E0DBFBF2E5B2F07001284FE /* CustomAlertDialog.swift */,
+				9E0DBFC22E5B2F07001284FE /* CustomInputDialog.swift */,
+				9E0DBFC32E5B2F07001284FE /* CustomLoadingDialog.swift */,
+				9E0DBFC42E5B2F07001284FE /* CustomStyledDialogs.swift */,
+				9E0DBFC02E5B2F07001284FE /* CustomConfirmDialog.swift */,
+			);
+			path = dialog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,16 +473,42 @@
 				9E0DBF7C2E5A277F001284FE /* UIColor+Extension.swift in Sources */,
 				9E0DBF922E5A4338001284FE /* PageHeaderView.swift in Sources */,
 				9E0DBF562E5A0FA2001284FE /* SceneDelegate.swift in Sources */,
+				9E0DBFD12E5B40FF001284FE /* ProgressBarExampleViewController.swift in Sources */,
+				9E0DBFD72E5B5BE6001284FE /* CollectionViewExampleViewController.swift in Sources */,
+				9E0DBFD92E5B5E46001284FE /* ViewPagerExampleViewController.swift in Sources */,
 				9E0DBF942E5A4FFB001284FE /* ButtonExampleViewController.swift in Sources */,
+				9E0DBFA52E5B0FE4001284FE /* InputExampleViewController.swift in Sources */,
+				9E0DBFA32E5B0926001284FE /* ImageExampleViewController.swift in Sources */,
 				1D5744EA2DBCFA08001AE8CD /* AppDelegate.swift in Sources */,
+				9E0DBFDD2E5B6864001284FE /* AdvancedControlsViewController.swift in Sources */,
+				9E0DBFD32E5B4367001284FE /* PagerViewExampleViewController.swift in Sources */,
+				9E0DBFA92E5B13BA001284FE /* SwitchExampleViewController.swift in Sources */,
+				9E0DBFAB2E5B13C1001284FE /* CheckboxExampleViewController.swift in Sources */,
 				9E0DBF7E2E5A2F73001284FE /* UIImage+Extension.swift in Sources */,
 				9E0DBF772E5A165A001284FE /* TabbarViewController.swift in Sources */,
+				9E0DBF9E2E5AF4FC001284FE /* BaseViewController.swift in Sources */,
 				9E0DBF802E5A33E5001284FE /* UIViewController+Extension.swift in Sources */,
 				9E0DBF712E5A14E5001284FE /* FunctionRootViewController.swift in Sources */,
+				9E0DBFAD2E5B1899001284FE /* BottomNavigationExampleViewController.swift in Sources */,
 				9E0DBF972E5A5724001284FE /* CustomNavigationBar.swift in Sources */,
+				9E0DBFAF2E5B1C23001284FE /* StackViewExampleViewController.swift in Sources */,
+				9E0DBF992E5AF3B4001284FE /* TextExampleViewController.swift in Sources */,
 				9E0DBF752E5A1638001284FE /* ThirdRootViewController.swift in Sources */,
+				9E0DBFA12E5B029D001284FE /* ExpandableTextView.swift in Sources */,
+				9E0DBFCF2E5B3D4A001284FE /* ToastExampleViewController.swift in Sources */,
+				9E0DBFC52E5B2F07001284FE /* CustomConfirmDialog.swift in Sources */,
+				9E0DBFD52E5B5A7D001284FE /* TableViewExampleViewController.swift in Sources */,
+				9E0DBFC62E5B2F07001284FE /* CustomDialogExampleViewController.swift in Sources */,
+				9E0DBFC72E5B2F07001284FE /* CustomAlertDialog.swift in Sources */,
+				9E0DBFCC2E5B3429001284FE /* BottomSheetExampleViewController.swift in Sources */,
+				9E0DBFC82E5B2F07001284FE /* CustomInputDialog.swift in Sources */,
+				9E0DBFC92E5B2F07001284FE /* CustomLoadingDialog.swift in Sources */,
+				9E0DBFCA2E5B2F07001284FE /* CustomStyledDialogs.swift in Sources */,
+				9E0DBFB12E5B23DB001284FE /* ContextMenuExampleViewController.swift in Sources */,
 				9E0DBF6F2E5A14D4001284FE /* HomeRootViewController.swift in Sources */,
+				9E0DBFA72E5B1276001284FE /* RadioButtonExampleViewController.swift in Sources */,
 				9E0DBF8D2E5A3F9B001284FE /* ListItemModel.swift in Sources */,
+				9E0DBFDB2E5B6367001284FE /* WebViewExampleViewController.swift in Sources */,
 				9E0DBF8E2E5A3F9B001284FE /* CardListViewController.swift in Sources */,
 				9E0DBF8F2E5A3F9B001284FE /* CardListCell.swift in Sources */,
 			);

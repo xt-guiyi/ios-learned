@@ -1,16 +1,24 @@
 PODS:
+  - FSPagerView (0.8.3)
   - SnapKit (5.7.1)
+  - Toast-Swift (5.1.1)
 
 DEPENDENCIES:
+  - FSPagerView (~> 0.8.3)
   - SnapKit (~> 5.7.0)
+  - Toast-Swift (~> 5.1.1)
 
 SPEC REPOS:
   trunk:
+    - FSPagerView
     - SnapKit
+    - Toast-Swift
 
 SPEC CHECKSUMS:
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: c35ba8f8508e13cff89bfcafc7a098748eb4a12e
+PODFILE CHECKSUM: ab74e926c4f4baf2ff7722a8dc485e0962131716
 
 COCOAPODS: 1.16.2

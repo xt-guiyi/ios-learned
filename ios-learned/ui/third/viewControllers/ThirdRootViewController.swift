@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ThirdRootViewController: UIViewController {
+class ThirdRootViewController: BaseViewController {
     
     private let headerView = PageHeaderView()
     private var listViewController: CardListViewController?
@@ -19,7 +19,6 @@ class ThirdRootViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
         setupHeaderView()
         setupListViewController()
     }
