@@ -43,10 +43,15 @@ class CustomDialogExampleViewController: BaseViewController {
     
     /// 设置导航栏
     private func setupNavigationBar() {
-        navigationBar.configure(title: "自定义弹窗") {
-            self.navigationController?.popViewController(animated: true)
+        navigationBar.configure(title: "自定义弹窗") { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
         }
+       
         view.addSubview(navigationBar)
+        navigationBar.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.top).offset(44)
+        }
     }
     
     /// 设置滚动视图

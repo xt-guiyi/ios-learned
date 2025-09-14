@@ -15,7 +15,13 @@ class ContextMenuExampleViewController: BaseViewController {
     private let customNavigationBar = CustomNavigationBar()
     
     // 示例数据
-    private var menuItems: [ContextMenuItem] = []
+    private var menuItems: [ContextMenuItem] = [
+        ContextMenuItem(title: "收藏文章", subtitle: "添加到我的收藏", type: .favorite),
+        ContextMenuItem(title: "分享链接", subtitle: "分享给朋友", type: .share),
+        ContextMenuItem(title: "复制内容", subtitle: "复制到剪贴板", type: .copy),
+        ContextMenuItem(title: "编辑信息", subtitle: "修改详细信息", type: .edit),
+        ContextMenuItem(title: "删除项目", subtitle: "永久删除此项", type: .delete)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,13 +98,7 @@ class ContextMenuExampleViewController: BaseViewController {
     
     /// 设置数据
     private func setupData() {
-        menuItems = [
-            ContextMenuItem(title: "收藏文章", subtitle: "添加到我的收藏", type: .favorite),
-            ContextMenuItem(title: "分享链接", subtitle: "分享给朋友", type: .share),
-            ContextMenuItem(title: "复制内容", subtitle: "复制到剪贴板", type: .copy),
-            ContextMenuItem(title: "编辑信息", subtitle: "修改详细信息", type: .edit),
-            ContextMenuItem(title: "删除项目", subtitle: "永久删除此项", type: .delete)
-        ]
+//        menuItems = []
     }
     
     /// 设置基础上下文菜单部分

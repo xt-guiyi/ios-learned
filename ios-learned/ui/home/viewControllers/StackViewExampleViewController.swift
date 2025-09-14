@@ -113,12 +113,13 @@ class StackViewExampleViewController: BaseViewController {
         
         var currentY = startY + 60
         
-        // 1. Fill Distribution
+        // 1. Fill Distribution https://blog.csdn.net/u010259906/article/details/120553159
+        // 根据compression resistance和hugging两个 priority 布局
         let fillContainer = createExampleContainer(title: "Fill - 填充分布")
         let fillStackView = createHorizontalStackView(distribution: .fill)
-        fillStackView.addArrangedSubview(createColorButton(title: "按钮1", color: .systemBlue))
-        fillStackView.addArrangedSubview(createColorButton(title: "按钮2", color: .systemGreen))
-        fillStackView.addArrangedSubview(createColorButton(title: "按钮3", color: .systemOrange))
+        fillStackView.addArrangedSubview(createColorButton(title: "按钮1", color: .systemBlue, width: 60))
+        fillStackView.addArrangedSubview(createColorButton(title: "按钮2", color: .systemGreen, width: 60))
+        fillStackView.addArrangedSubview(createColorButton(title: "按钮3", color: .systemOrange, width: 60))
         
         fillContainer.addSubview(fillStackView)
         contentView.addSubview(fillContainer)
@@ -414,7 +415,7 @@ class StackViewExampleViewController: BaseViewController {
         }
         
         controlStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(15)
+            make.top.equalToSuperview().offset(25)
             make.left.right.equalToSuperview().inset(15)
             make.height.equalTo(35)
         }

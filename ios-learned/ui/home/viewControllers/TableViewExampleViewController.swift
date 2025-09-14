@@ -44,6 +44,10 @@ class TableViewExampleViewController: BaseViewController {
             self.navigationController?.popViewController(animated: true)
         }
         view.addSubview(navigationBar)
+        navigationBar.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.top).offset(44)
+        }
     }
     
     /// 设置分段控制器
