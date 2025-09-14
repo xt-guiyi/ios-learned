@@ -46,6 +46,9 @@ class ThirdRootViewController: BaseViewController {
         
         // 配置列表数据
         let listData = [
+            ListItemModel(title: "mvc架构", subtitle: "项目级别的mvc架构") {
+                print("点击了：SnapKit")
+            },
             ListItemModel(title: "自定义相机界面", subtitle: "定制一个相机界面，可以加上识别人脸功能") {
                 print("点击了：SnapKit")
             },
