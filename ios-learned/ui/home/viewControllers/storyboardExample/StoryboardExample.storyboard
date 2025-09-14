@@ -13,7 +13,7 @@
         <!--Storyboard Example View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="StoryboardExample1" id="Y6W-OH-hqX" customClass="StoryboardExampleViewController" customModule="ios_learned" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoryboardPage1" id="Y6W-OH-hqX" customClass="StoryboardExampleViewController" customModule="ios_learned" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,30 +22,39 @@
                                 <rect key="frame" x="0.0" y="118" width="393" height="616"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qih-CA-1wo">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="616"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1299"/>
                                         <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-81-sI7">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" showsScale="YES" pitchButtonVisibility="visible" showsUserTrackingButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-81-sI7">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="nl2-Dn-Dqz"/>
                                                 </constraints>
-                                                <standardMapConfiguration key="preferredConfiguration"/>
+                                                <standardMapConfiguration key="preferredConfiguration" elevationStyle="realistic" emphasisStyle="muted" showsTraffic="YES"/>
                                             </mapView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_1" translatesAutoresizingMaskIntoConstraints="NO" id="noC-S1-f3r">
+                                                <rect key="frame" x="0.0" y="300" width="393" height="999"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="999" id="TWh-cP-eBm"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
+                                            <constraint firstItem="noC-S1-f3r" firstAttribute="top" secondItem="ReC-81-sI7" secondAttribute="bottom" id="4OI-VP-h62"/>
                                             <constraint firstItem="ReC-81-sI7" firstAttribute="leading" secondItem="Qih-CA-1wo" secondAttribute="leading" id="DA0-pS-kUH"/>
                                             <constraint firstItem="ReC-81-sI7" firstAttribute="top" secondItem="Qih-CA-1wo" secondAttribute="top" id="SeH-HH-aYd"/>
+                                            <constraint firstAttribute="trailing" secondItem="noC-S1-f3r" secondAttribute="trailing" id="aVO-9A-xmc"/>
+                                            <constraint firstAttribute="bottom" secondItem="noC-S1-f3r" secondAttribute="bottom" id="btm-img-constraint"/>
+                                            <constraint firstItem="noC-S1-f3r" firstAttribute="leading" secondItem="Qih-CA-1wo" secondAttribute="leading" id="ivr-Eo-v66"/>
                                             <constraint firstAttribute="trailing" secondItem="ReC-81-sI7" secondAttribute="trailing" id="tEb-DO-hIe"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Qih-CA-1wo" firstAttribute="leading" secondItem="dbl-hf-9dx" secondAttribute="leading" id="64U-Db-e5y"/>
-                                    <constraint firstAttribute="bottom" secondItem="Qih-CA-1wo" secondAttribute="bottom" id="CbT-FS-Kad"/>
                                     <constraint firstItem="Qih-CA-1wo" firstAttribute="width" secondItem="dbl-hf-9dx" secondAttribute="width" id="IU9-In-BYC"/>
                                     <constraint firstAttribute="trailing" secondItem="Qih-CA-1wo" secondAttribute="trailing" id="KpX-6N-FyB"/>
-                                    <constraint firstItem="Qih-CA-1wo" firstAttribute="centerY" secondItem="dbl-hf-9dx" secondAttribute="centerY" id="YsI-eF-yGi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qih-CA-1wo" secondAttribute="bottom" id="cCc-du-mKN"/>
                                     <constraint firstItem="Qih-CA-1wo" firstAttribute="top" secondItem="dbl-hf-9dx" secondAttribute="top" id="lPs-cU-Vxt"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Jso-tX-m3w"/>
@@ -69,8 +78,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="img_1" width="4000" height="2828"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

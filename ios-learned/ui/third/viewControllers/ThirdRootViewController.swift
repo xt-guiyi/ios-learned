@@ -46,24 +46,21 @@ class ThirdRootViewController: BaseViewController {
         
         // 配置列表数据
         let listData = [
-            ListItemModel(title: "SnapKit", subtitle: "Auto Layout 的 DSL 库") {
+            ListItemModel(title: "自定义相机界面", subtitle: "定制一个相机界面，可以加上识别人脸功能") {
                 print("点击了：SnapKit")
             },
-            ListItemModel(title: "Alamofire", subtitle: "Swift 网络请求库") {
+            ListItemModel(title: "语音转文字功能", subtitle: "识别语音转文字") {
                 print("点击了：Alamofire")
             },
-            ListItemModel(title: "Kingfisher", subtitle: "图片下载和缓存库") {
+            ListItemModel(title: "app一键登陆", subtitle: "使用运营商提供的一键登陆功能") {
                 print("点击了：Kingfisher")
             },
-            ListItemModel(title: "RxSwift", subtitle: "响应式编程框架") {
+            ListItemModel(title: "ai回答", subtitle: "返回ai的答案") {
                 print("点击了：RxSwift")
             },
-            ListItemModel(title: "Moya", subtitle: "网络抽象层库") {
+            ListItemModel(title: "图片视频选择，上传到腾讯云存储, 文字识别等等", subtitle: "选择图片和视频") {
                 print("点击了：Moya")
             },
-            ListItemModel(title: "SwiftyJSON", subtitle: "JSON 解析库") {
-                print("点击了：SwiftyJSON")
-            }
         ]
         
         controller.updateData(listData)

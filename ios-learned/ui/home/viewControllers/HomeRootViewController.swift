@@ -125,6 +125,15 @@ class HomeRootViewController: BaseViewController {
                 let advancedControlsVC = AdvancedControlsViewController()
                 self.navigationController?.pushViewController(advancedControlsVC, animated: true)
             },
+            ListItemModel(title: "Storyboard加载方式", subtitle: "学习如何使用Storyboard加载ViewController") {
+               let storeboard = UIStoryboard(name: "StoryboardExample", bundle: nil)
+               let animationExampleVC = storeboard.instantiateViewController(withIdentifier: "StoryboardPage1") as! StoryboardExampleViewController
+               self.navigationController?.pushViewController(animationExampleVC, animated: true)
+            },
+            ListItemModel(title: "nib加载方式", subtitle: "学习如何使用Nib加载ViewController") {
+                let nibExampleVC = NibExampleViewController(nibName: "NibExampleViewController", bundle: nil)
+                self.navigationController?.pushViewController(nibExampleVC, animated: true)
+            },
         ]
         
         controller.updateData(listData)
