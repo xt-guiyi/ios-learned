@@ -48,12 +48,17 @@
 		9E0DBFD72E5B5BE6001284FE /* CollectionViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFD62E5B5BE6001284FE /* CollectionViewExampleViewController.swift */; };
 		9E0DBFD92E5B5E46001284FE /* ViewPagerExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFD82E5B5E46001284FE /* ViewPagerExampleViewController.swift */; };
 		9E0DBFDB2E5B6367001284FE /* WebViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFDA2E5B6367001284FE /* WebViewExampleViewController.swift */; };
-		9E0DBFDD2E5B6864001284FE /* AdvancedControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFDC2E5B6864001284FE /* AdvancedControlsViewController.swift */; };
 		9E4BD3442E7EE99D00EA940E /* SystemBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4BD3432E7EE99D00EA940E /* SystemBarViewController.swift */; };
 		9EAE98652E76E729001DE57E /* StoryboardExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAE98642E76E729001DE57E /* StoryboardExample.storyboard */; };
 		9EAE98672E76E7B9001DE57E /* StoryboardExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE98662E76E7B9001DE57E /* StoryboardExampleViewController.swift */; };
 		9EAE986B2E7705E3001DE57E /* NibExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE98692E7705E3001DE57E /* NibExampleViewController.swift */; };
 		9EAE986C2E7705E3001DE57E /* NibExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAE986A2E7705E3001DE57E /* NibExampleViewController.xib */; };
+		D605CCD3C357E2A5149CAC /* PickerViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED300A2AFACD9A85A1BF11 /* PickerViewExampleViewController.swift */; };
+		4A42611E27E78DBC6352BE /* DatePickerExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65B87B0717D320D93E18 /* DatePickerExampleViewController.swift */; };
+		C78082A92D190790B174B0 /* SliderExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD5D4E03181AE46412C3 /* SliderExampleViewController.swift */; };
+		30E798F0C1205466799160 /* StepperExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E8D00BD5FD34DB93CF2E /* StepperExampleViewController.swift */; };
+		DF6C389E802A6C7CFF3515 /* PageControlExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2346A91C57973B3BC465 /* PageControlExampleViewController.swift */; };
+		93C3BC1D6784C163636B45 /* ActivityIndicatorExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8343DA2AFDFB10B8E766 /* ActivityIndicatorExampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,12 +105,17 @@
 		9E0DBFD62E5B5BE6001284FE /* CollectionViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExampleViewController.swift; sourceTree = "<group>"; };
 		9E0DBFD82E5B5E46001284FE /* ViewPagerExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPagerExampleViewController.swift; sourceTree = "<group>"; };
 		9E0DBFDA2E5B6367001284FE /* WebViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExampleViewController.swift; sourceTree = "<group>"; };
-		9E0DBFDC2E5B6864001284FE /* AdvancedControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedControlsViewController.swift; sourceTree = "<group>"; };
 		9E4BD3432E7EE99D00EA940E /* SystemBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemBarViewController.swift; sourceTree = "<group>"; };
 		9EAE98642E76E729001DE57E /* StoryboardExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardExample.storyboard; sourceTree = "<group>"; };
 		9EAE98662E76E7B9001DE57E /* StoryboardExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExampleViewController.swift; sourceTree = "<group>"; };
 		9EAE98692E7705E3001DE57E /* NibExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibExampleViewController.swift; sourceTree = "<group>"; };
 		9EAE986A2E7705E3001DE57E /* NibExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibExampleViewController.xib; sourceTree = "<group>"; };
+		ED300A2AFACD9A85A1BF11 /* PickerViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewExampleViewController.swift; sourceTree = "<group>"; };
+		EF65B87B0717D320D93E18 /* DatePickerExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerExampleViewController.swift; sourceTree = "<group>"; };
+		40FD5D4E03181AE46412C3 /* SliderExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderExampleViewController.swift; sourceTree = "<group>"; };
+		09E8D00BD5FD34DB93CF2E /* StepperExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperExampleViewController.swift; sourceTree = "<group>"; };
+		9B2346A91C57973B3BC465 /* PageControlExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlExampleViewController.swift; sourceTree = "<group>"; };
+		CE8343DA2AFDFB10B8E766 /* ActivityIndicatorExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorExampleViewController.swift; sourceTree = "<group>"; };
 		DE41D1BA0E479416F6B6FE32 /* Pods-ios-learned.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-learned.debug.xcconfig"; path = "Target Support Files/Pods-ios-learned/Pods-ios-learned.debug.xcconfig"; sourceTree = "<group>"; };
 		F0EBC43438681C129F9564AE /* Pods-ios-learned.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-learned.release.xcconfig"; path = "Target Support Files/Pods-ios-learned/Pods-ios-learned.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,7 +248,12 @@
 			children = (
 				9EAE98682E7705B3001DE57E /* nibExample */,
 				9EAE98632E76E6F6001DE57E /* storyboardExample */,
-				9E0DBFDC2E5B6864001284FE /* AdvancedControlsViewController.swift */,
+				ED300A2AFACD9A85A1BF11 /* PickerViewExampleViewController.swift */,
+				EF65B87B0717D320D93E18 /* DatePickerExampleViewController.swift */,
+				40FD5D4E03181AE46412C3 /* SliderExampleViewController.swift */,
+				09E8D00BD5FD34DB93CF2E /* StepperExampleViewController.swift */,
+				9B2346A91C57973B3BC465 /* PageControlExampleViewController.swift */,
+				CE8343DA2AFDFB10B8E766 /* ActivityIndicatorExampleViewController.swift */,
 				9E0DBFDA2E5B6367001284FE /* WebViewExampleViewController.swift */,
 				9E0DBFD82E5B5E46001284FE /* ViewPagerExampleViewController.swift */,
 				9E0DBFD62E5B5BE6001284FE /* CollectionViewExampleViewController.swift */,
@@ -515,7 +530,6 @@
 				9E0DBFA52E5B0FE4001284FE /* InputExampleViewController.swift in Sources */,
 				9E0DBFA32E5B0926001284FE /* ImageExampleViewController.swift in Sources */,
 				1D5744EA2DBCFA08001AE8CD /* AppDelegate.swift in Sources */,
-				9E0DBFDD2E5B6864001284FE /* AdvancedControlsViewController.swift in Sources */,
 				9E0DBFD32E5B4367001284FE /* PagerViewExampleViewController.swift in Sources */,
 				9EAE986B2E7705E3001DE57E /* NibExampleViewController.swift in Sources */,
 				9E0DBFA92E5B13BA001284FE /* SwitchExampleViewController.swift in Sources */,
@@ -545,6 +559,12 @@
 				9E0DBFA72E5B1276001284FE /* RadioButtonExampleViewController.swift in Sources */,
 				9E0DBF8D2E5A3F9B001284FE /* ListItemModel.swift in Sources */,
 				9E0DBFDB2E5B6367001284FE /* WebViewExampleViewController.swift in Sources */,
+				D605CCD3C357E2A5149CAC /* PickerViewExampleViewController.swift in Sources */,
+				4A42611E27E78DBC6352BE /* DatePickerExampleViewController.swift in Sources */,
+				C78082A92D190790B174B0 /* SliderExampleViewController.swift in Sources */,
+				30E798F0C1205466799160 /* StepperExampleViewController.swift in Sources */,
+				DF6C389E802A6C7CFF3515 /* PageControlExampleViewController.swift in Sources */,
+				93C3BC1D6784C163636B45 /* ActivityIndicatorExampleViewController.swift in Sources */,
 				9E0DBF8E2E5A3F9B001284FE /* CardListViewController.swift in Sources */,
 				9E0DBF8F2E5A3F9B001284FE /* CardListCell.swift in Sources */,
 			);

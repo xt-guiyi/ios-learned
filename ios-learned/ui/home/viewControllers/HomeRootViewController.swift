@@ -122,9 +122,29 @@ class HomeRootViewController: BaseViewController {
                 let webViewExampleVC = WebViewExampleViewController()
                 self.pushViewController(webViewExampleVC)
             },
-            ListItemModel(title: "高级控件", subtitle: "学习PickerView、DatePicker、Slider等高级控件的使用") {
-                let advancedControlsVC = AdvancedControlsViewController()
-                self.pushViewController(advancedControlsVC)
+            ListItemModel(title: "PickerView选择器", subtitle: "学习UIPickerView的各种使用方式和弹出模式") {
+                let pickerViewExampleVC = PickerViewExampleViewController()
+                self.pushViewController(pickerViewExampleVC)
+            },
+            ListItemModel(title: "DatePicker日期选择器", subtitle: "学习UIDatePicker的各种模式和样式") {
+                let datePickerExampleVC = DatePickerExampleViewController()
+                self.pushViewController(datePickerExampleVC)
+            },
+            ListItemModel(title: "Slider滑块控件", subtitle: "学习UISlider的自定义样式和交互") {
+                let sliderExampleVC = SliderExampleViewController()
+                self.pushViewController(sliderExampleVC)
+            },
+            ListItemModel(title: "Stepper步进器", subtitle: "学习UIStepper的配置和使用场景") {
+                let stepperExampleVC = StepperExampleViewController()
+                self.pushViewController(stepperExampleVC)
+            },
+            ListItemModel(title: "PageControl页面指示器", subtitle: "学习UIPageControl与ScrollView的联动") {
+                let pageControlExampleVC = PageControlExampleViewController()
+                self.pushViewController(pageControlExampleVC)
+            },
+            ListItemModel(title: "ActivityIndicator活动指示器", subtitle: "学习UIActivityIndicatorView的显示控制") {
+                let activityIndicatorExampleVC = ActivityIndicatorExampleViewController()
+                self.pushViewController(activityIndicatorExampleVC)
             },
             ListItemModel(title: "Storyboard加载方式", subtitle: "学习如何使用Storyboard加载ViewController") {
                let storeboard = UIStoryboard(name: "StoryboardExample", bundle: nil)

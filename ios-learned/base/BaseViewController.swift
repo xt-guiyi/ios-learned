@@ -402,9 +402,9 @@ class BaseViewController: UIViewController {
     // MARK: - Memory Management
 
     /// 对象销毁时调用，用于清理资源
-    deinit {
-        // 移除所有通知观察者
-        NotificationCenter.default.removeObserver(self)
-        logger.debug("✅ \(String(describing: type(of: self))) 已销毁")
-    }
+//    deinit {
+//        // 移除所有通知观察者
+//        NotificationCenter.default.removeObserver(self)
+//        logger.debug("✅ \(String(describing: type(of: self))) 已销毁")
+//    }
 }

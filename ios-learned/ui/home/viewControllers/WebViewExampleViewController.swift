@@ -11,7 +11,7 @@ import SnapKit
 /// WebView控件示例页面
 class WebViewExampleViewController: BaseViewController {
     
-    private var segmentedControl: UISegmentedControl!
+    private var segmentedControl: UISegmentedControl?
     private var containerView: UIView?
     private var currentViewController: UIViewController?
     private let navigationBar = CustomNavigationBar()
@@ -35,7 +35,7 @@ class WebViewExampleViewController: BaseViewController {
     
     private func setupNavigationBar() {
         navigationBar.configure(title: "WebView控件示例") { [weak self] in
-            self?.navigationController?.popViewController(animated: true)
+            self?.popViewController()
         }
         
         view.addSubview(navigationBar)
@@ -48,10 +48,11 @@ class WebViewExampleViewController: BaseViewController {
     
     private func setupContent() {
         // 创建分段控制器
-        segmentedControl = UISegmentedControl(items: titles)
+        let segmentedControl = UISegmentedControl(items: titles)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
-        
+        self.segmentedControl = segmentedControl
+
         view.addSubview(segmentedControl)
         segmentedControl.snp.makeConstraints { make in
             make.top.equalTo(navigationBar.snp.bottom).offset(20)
@@ -91,6 +92,7 @@ class WebViewExampleViewController: BaseViewController {
     
     /// 分段控制器改变事件
     @objc private func segmentChanged() {
+        guard let segmentedControl = segmentedControl else { return }
         showViewController(at: segmentedControl.selectedSegmentIndex)
     }
     
@@ -116,7 +118,7 @@ class WebViewExampleViewController: BaseViewController {
 // MARK: - 基础WebView
 class BasicWebViewController: UIViewController {
     
-    private var webView: WKWebView!
+    private var webView: WKWebView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,8 +132,9 @@ class BasicWebViewController: UIViewController {
         
         // 创建WebView
         let config = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: config)
-        
+        let webView = WKWebView(frame: .zero, configuration: config)
+        self.webView = webView
+
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(20)
@@ -161,7 +164,7 @@ class BasicWebViewController: UIViewController {
     private func loadWebsite() {
         if let url = URL(string: "https://www.apple.com") {
             let request = URLRequest(url: url)
-            webView.load(request)
+            webView?.load(request)
         }
     }
 }
@@ -169,10 +172,10 @@ class BasicWebViewController: UIViewController {
 // MARK: - 带导航的WebView
 class NavigationWebViewController: UIViewController {
     
-    private var webView: WKWebView!
-    private var backButton: UIButton!
-    private var forwardButton: UIButton!
-    private var refreshButton: UIButton!
+    private var webView: WKWebView?
+    private var backButton: UIButton?
+    private var forwardButton: UIButton?
+    private var refreshButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -195,9 +198,13 @@ class NavigationWebViewController: UIViewController {
         }
         
         // 创建导航按钮
-        backButton = createToolbarButton(title: "◀", action: #selector(goBack))
-        forwardButton = createToolbarButton(title: "▶", action: #selector(goForward))
-        refreshButton = createToolbarButton(title: "🔄", action: #selector(refresh))
+        let backButton = createToolbarButton(title: "◀", action: #selector(goBack))
+        let forwardButton = createToolbarButton(title: "▶", action: #selector(goForward))
+        let refreshButton = createToolbarButton(title: "🔄", action: #selector(refresh))
+
+        self.backButton = backButton
+        self.forwardButton = forwardButton
+        self.refreshButton = refreshButton
         
         let stackView = UIStackView(arrangedSubviews: [backButton, forwardButton, refreshButton])
         stackView.distribution = .fillEqually
@@ -210,9 +217,10 @@ class NavigationWebViewController: UIViewController {
         
         // 创建WebView
         let config = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: config)
+        let webView = WKWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = self
-        
+        self.webView = webView
+
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.top.equalTo(toolbar.snp.bottom)
@@ -234,27 +242,31 @@ class NavigationWebViewController: UIViewController {
     private func loadWebsite() {
         if let url = URL(string: "https://www.apple.com") {
             let request = URLRequest(url: url)
-            webView.load(request)
+            webView?.load(request)
         }
     }
     
     /// 后退
     @objc private func goBack() {
-        webView.goBack()
+        webView?.goBack()
     }
-    
+
     /// 前进
     @objc private func goForward() {
-        webView.goForward()
+        webView?.goForward()
     }
-    
+
     /// 刷新
     @objc private func refresh() {
-        webView.reload()
+        webView?.reload()
     }
-    
+
     /// 更新按钮状态
     private func updateButtonStates() {
+        guard let webView = webView,
+              let backButton = backButton,
+              let forwardButton = forwardButton else { return }
+
         backButton.isEnabled = webView.canGoBack
         forwardButton.isEnabled = webView.canGoForward
         backButton.alpha = webView.canGoBack ? 1.0 : 0.5
@@ -277,9 +289,9 @@ extension NavigationWebViewController: WKNavigationDelegate {
 // MARK: - 带进度条的WebView
 class ProgressWebViewController: UIViewController {
     
-    private var webView: WKWebView!
-    private var progressView: UIProgressView!
-    private var urlLabel: UILabel!
+    private var webView: WKWebView?
+    private var progressView: UIProgressView?
+    private var urlLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -293,12 +305,13 @@ class ProgressWebViewController: UIViewController {
         view.backgroundColor = UIColor.systemBackground
         
         // 创建URL标签
-        urlLabel = UILabel()
+        let urlLabel = UILabel()
         urlLabel.text = "正在加载..."
         urlLabel.font = UIFont.systemFont(ofSize: 14)
         urlLabel.textColor = UIColor.systemBlue
         urlLabel.textAlignment = .center
-        
+        self.urlLabel = urlLabel
+
         view.addSubview(urlLabel)
         urlLabel.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview().inset(20)
@@ -306,9 +319,10 @@ class ProgressWebViewController: UIViewController {
         }
         
         // 创建进度条
-        progressView = UIProgressView(progressViewStyle: .default)
+        let progressView = UIProgressView(progressViewStyle: .default)
         progressView.progressTintColor = UIColor.themeColor
-        
+        self.progressView = progressView
+
         view.addSubview(progressView)
         progressView.snp.makeConstraints { make in
             make.top.equalTo(urlLabel.snp.bottom).offset(10)
@@ -318,9 +332,10 @@ class ProgressWebViewController: UIViewController {
         
         // 创建WebView
         let config = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: config)
+        let webView = WKWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = self
-        
+        self.webView = webView
+
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.top.equalTo(progressView.snp.bottom).offset(10)
@@ -330,21 +345,23 @@ class ProgressWebViewController: UIViewController {
     
     /// 设置KVO观察者
     private func setupObservers() {
-        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        webView.addObserver(self, forKeyPath: "URL", options: .new, context: nil)
+        webView?.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+        webView?.addObserver(self, forKeyPath: "URL", options: .new, context: nil)
     }
     
     /// 移除观察者
     deinit {
-        webView.removeObserver(self, forKeyPath: "estimatedProgress")
-        webView.removeObserver(self, forKeyPath: "URL")
+        webView?.removeObserver(self, forKeyPath: "estimatedProgress")
+        webView?.removeObserver(self, forKeyPath: "URL")
     }
     
     /// KVO观察
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
+            guard let webView = webView, let progressView = progressView else { return }
             progressView.setProgress(Float(webView.estimatedProgress), animated: true)
         } else if keyPath == "URL" {
+            guard let webView = webView, let urlLabel = urlLabel else { return }
             urlLabel.text = webView.url?.absoluteString ?? "正在加载..."
         }
     }
@@ -353,7 +370,7 @@ class ProgressWebViewController: UIViewController {
     private func loadWebsite() {
         if let url = URL(string: "https://www.apple.com") {
             let request = URLRequest(url: url)
-            webView.load(request)
+            webView?.load(request)
         }
     }
 }
@@ -362,13 +379,15 @@ class ProgressWebViewController: UIViewController {
 extension ProgressWebViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        guard let progressView = progressView else { return }
         progressView.setProgress(0.0, animated: false)
         UIView.animate(withDuration: 0.3) {
-            self.progressView.alpha = 0
+            progressView.alpha = 0
         }
     }
-    
+
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        guard let progressView = progressView else { return }
         progressView.alpha = 1.0
         progressView.setProgress(0.0, animated: false)
     }
@@ -377,8 +396,8 @@ extension ProgressWebViewController: WKNavigationDelegate {
 // MARK: - JavaScript交互WebView
 class JavaScriptWebViewController: UIViewController {
     
-    private var webView: WKWebView!
-    private var messageLabel: UILabel!
+    private var webView: WKWebView?
+    private var messageLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -391,14 +410,15 @@ class JavaScriptWebViewController: UIViewController {
         view.backgroundColor = UIColor.systemBackground
         
         // 创建消息标签
-        messageLabel = UILabel()
+        let messageLabel = UILabel()
         messageLabel.text = "JavaScript消息将显示在这里"
         messageLabel.font = UIFont.systemFont(ofSize: 14)
         messageLabel.textColor = UIColor.systemGray
         messageLabel.textAlignment = .center
         messageLabel.numberOfLines = 0
         messageLabel.backgroundColor = UIColor.systemGray6
-        
+        self.messageLabel = messageLabel
+
         view.addSubview(messageLabel)
         messageLabel.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview().inset(20)
@@ -410,10 +430,11 @@ class JavaScriptWebViewController: UIViewController {
         let userContentController = WKUserContentController()
         userContentController.add(self, name: "iosHandler")
         config.userContentController = userContentController
-        
-        webView = WKWebView(frame: .zero, configuration: config)
+
+        let webView = WKWebView(frame: .zero, configuration: config)
         webView.navigationDelegate = self
-        
+        self.webView = webView
+
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.top.equalTo(messageLabel.snp.bottom).offset(10)
@@ -500,7 +521,7 @@ class JavaScriptWebViewController: UIViewController {
         </html>
         """
         
-        webView.loadHTMLString(htmlString, baseURL: nil)
+        webView?.loadHTMLString(htmlString, baseURL: nil)
     }
 }
 
@@ -513,11 +534,11 @@ extension JavaScriptWebViewController: WKScriptMessageHandler {
                let action = body["action"] as? String,
                let data = body["data"] as? String {
                 
-                messageLabel.text = "收到JS消息: \(data)"
-                
+                messageLabel?.text = "收到JS消息: \(data)"
+
                 // 发送消息回JavaScript
                 let script = "receiveMessageFromiOS('Hello from iOS!');"
-                webView.evaluateJavaScript(script, completionHandler: nil)
+                webView?.evaluateJavaScript(script, completionHandler: nil)
             }
         }
     }
@@ -538,8 +559,8 @@ extension JavaScriptWebViewController: WKNavigationDelegate {
 // MARK: - 自定义WebView
 class CustomWebViewController: UIViewController {
     
-    private var webView: WKWebView!
-    private var toolbarView: UIView!
+    private var webView: WKWebView?
+    private var toolbarView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -552,9 +573,10 @@ class CustomWebViewController: UIViewController {
         view.backgroundColor = UIColor.systemBackground
         
         // 创建自定义工具栏
-        toolbarView = UIView()
+        let toolbarView = UIView()
         toolbarView.backgroundColor = UIColor.themeColor
-        
+        self.toolbarView = toolbarView
+
         view.addSubview(toolbarView)
         toolbarView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview().inset(20)
@@ -581,8 +603,9 @@ class CustomWebViewController: UIViewController {
         // 创建WebView
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
-        webView = WKWebView(frame: .zero, configuration: config)
-        
+        let webView = WKWebView(frame: .zero, configuration: config)
+        self.webView = webView
+
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.top.equalTo(toolbarView.snp.bottom).offset(10)
@@ -606,7 +629,7 @@ class CustomWebViewController: UIViewController {
     private func loadWebsite() {
         if let url = URL(string: "https://www.apple.com/cn/") {
             let request = URLRequest(url: url)
-            webView.load(request)
+            webView?.load(request)
         }
     }
     
@@ -620,7 +643,7 @@ class CustomWebViewController: UIViewController {
     
     /// 分享链接
     @objc private func shareURL() {
-        guard let url = webView.url else { return }
+        guard let url = webView?.url else { return }
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         present(activityVC, animated: true)
     }
@@ -646,8 +669,8 @@ class CustomWebViewController: UIViewController {
         })
         
         alert.addAction(UIAlertAction(title: "查看页面信息", style: .default) { _ in
-            let title = self.webView.title ?? "无标题"
-            let url = self.webView.url?.absoluteString ?? "无URL"
+            let title = self.webView?.title ?? "无标题"
+            let url = self.webView?.url?.absoluteString ?? "无URL"
             if let parentVC = self.parent?.parent as? WebViewExampleViewController {
                 parentVC.view.makeToast("标题: \(title)\nURL: \(url)", duration: 3.0)
             }
