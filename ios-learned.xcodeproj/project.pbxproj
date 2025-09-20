@@ -17,7 +17,6 @@
 		9E0DBF772E5A165A001284FE /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF762E5A165A001284FE /* TabbarViewController.swift */; };
 		9E0DBF7C2E5A277F001284FE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF7A2E5A277F001284FE /* UIColor+Extension.swift */; };
 		9E0DBF7E2E5A2F73001284FE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF7D2E5A2F73001284FE /* UIImage+Extension.swift */; };
-		9E0DBF802E5A33E5001284FE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF7F2E5A33D4001284FE /* UIViewController+Extension.swift */; };
 		9E0DBF8D2E5A3F9B001284FE /* ListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF8A2E5A3F9B001284FE /* ListItemModel.swift */; };
 		9E0DBF8E2E5A3F9B001284FE /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF892E5A3F9B001284FE /* CardListViewController.swift */; };
 		9E0DBF8F2E5A3F9B001284FE /* CardListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBF882E5A3F9B001284FE /* CardListCell.swift */; };
@@ -50,6 +49,7 @@
 		9E0DBFD92E5B5E46001284FE /* ViewPagerExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFD82E5B5E46001284FE /* ViewPagerExampleViewController.swift */; };
 		9E0DBFDB2E5B6367001284FE /* WebViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFDA2E5B6367001284FE /* WebViewExampleViewController.swift */; };
 		9E0DBFDD2E5B6864001284FE /* AdvancedControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0DBFDC2E5B6864001284FE /* AdvancedControlsViewController.swift */; };
+		9E4BD3442E7EE99D00EA940E /* SystemBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4BD3432E7EE99D00EA940E /* SystemBarViewController.swift */; };
 		9EAE98652E76E729001DE57E /* StoryboardExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAE98642E76E729001DE57E /* StoryboardExample.storyboard */; };
 		9EAE98672E76E7B9001DE57E /* StoryboardExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE98662E76E7B9001DE57E /* StoryboardExampleViewController.swift */; };
 		9EAE986B2E7705E3001DE57E /* NibExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE98692E7705E3001DE57E /* NibExampleViewController.swift */; };
@@ -69,7 +69,6 @@
 		9E0DBF762E5A165A001284FE /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		9E0DBF7A2E5A277F001284FE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9E0DBF7D2E5A2F73001284FE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		9E0DBF7F2E5A33D4001284FE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		9E0DBF882E5A3F9B001284FE /* CardListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCell.swift; sourceTree = "<group>"; };
 		9E0DBF892E5A3F9B001284FE /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
 		9E0DBF8A2E5A3F9B001284FE /* ListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemModel.swift; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		9E0DBFD82E5B5E46001284FE /* ViewPagerExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPagerExampleViewController.swift; sourceTree = "<group>"; };
 		9E0DBFDA2E5B6367001284FE /* WebViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExampleViewController.swift; sourceTree = "<group>"; };
 		9E0DBFDC2E5B6864001284FE /* AdvancedControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedControlsViewController.swift; sourceTree = "<group>"; };
+		9E4BD3432E7EE99D00EA940E /* SystemBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemBarViewController.swift; sourceTree = "<group>"; };
 		9EAE98642E76E729001DE57E /* StoryboardExample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardExample.storyboard; sourceTree = "<group>"; };
 		9EAE98662E76E7B9001DE57E /* StoryboardExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExampleViewController.swift; sourceTree = "<group>"; };
 		9EAE98692E7705E3001DE57E /* NibExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibExampleViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +109,14 @@
 		DE41D1BA0E479416F6B6FE32 /* Pods-ios-learned.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-learned.debug.xcconfig"; path = "Target Support Files/Pods-ios-learned/Pods-ios-learned.debug.xcconfig"; sourceTree = "<group>"; };
 		F0EBC43438681C129F9564AE /* Pods-ios-learned.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-learned.release.xcconfig"; path = "Target Support Files/Pods-ios-learned/Pods-ios-learned.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		9ECE57DC2E7D1F4900E656C8 /* 学习文档 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "学习文档";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1D3AD7CD2DBBDD78005EA361 /* Frameworks */ = {
@@ -171,6 +179,7 @@
 		1D5744E42DBCFA08001AE8CD /* ios-learned */ = {
 			isa = PBXGroup;
 			children = (
+				9ECE57DC2E7D1F4900E656C8 /* 学习文档 */,
 				9E0DBF9A2E5AF3EB001284FE /* base */,
 				9E0DBF7B2E5A277F001284FE /* extensions */,
 				9E0DBF8C2E5A3F9B001284FE /* views */,
@@ -202,7 +211,6 @@
 		9E0DBF5A2E5A1306001284FE /* function */ = {
 			isa = PBXGroup;
 			children = (
-				9E0DBF822E5A3A5B001284FE /* views */,
 				9E0DBF602E5A1392001284FE /* viewControllers */,
 			);
 			path = function;
@@ -259,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				9E0DBF702E5A14E5001284FE /* FunctionRootViewController.swift */,
+				9E4BD3432E7EE99D00EA940E /* SystemBarViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -274,18 +283,10 @@
 		9E0DBF7B2E5A277F001284FE /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9E0DBF7F2E5A33D4001284FE /* UIViewController+Extension.swift */,
 				9E0DBF7D2E5A2F73001284FE /* UIImage+Extension.swift */,
 				9E0DBF7A2E5A277F001284FE /* UIColor+Extension.swift */,
 			);
 			path = extensions;
-			sourceTree = "<group>";
-		};
-		9E0DBF822E5A3A5B001284FE /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
 			sourceTree = "<group>";
 		};
 		9E0DBF832E5A3A60001284FE /* views */ = {
@@ -395,6 +396,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9ECE57DC2E7D1F4900E656C8 /* 学习文档 */,
 			);
 			name = "ios-learned";
 			productName = "ios-learned";
@@ -519,7 +523,6 @@
 				9E0DBF7E2E5A2F73001284FE /* UIImage+Extension.swift in Sources */,
 				9E0DBF772E5A165A001284FE /* TabbarViewController.swift in Sources */,
 				9E0DBF9E2E5AF4FC001284FE /* BaseViewController.swift in Sources */,
-				9E0DBF802E5A33E5001284FE /* UIViewController+Extension.swift in Sources */,
 				9E0DBF712E5A14E5001284FE /* FunctionRootViewController.swift in Sources */,
 				9E0DBFAD2E5B1899001284FE /* BottomNavigationExampleViewController.swift in Sources */,
 				9E0DBF972E5A5724001284FE /* CustomNavigationBar.swift in Sources */,
@@ -536,6 +539,7 @@
 				9E0DBFC82E5B2F07001284FE /* CustomInputDialog.swift in Sources */,
 				9E0DBFC92E5B2F07001284FE /* CustomLoadingDialog.swift in Sources */,
 				9E0DBFCA2E5B2F07001284FE /* CustomStyledDialogs.swift in Sources */,
+				9E4BD3442E7EE99D00EA940E /* SystemBarViewController.swift in Sources */,
 				9E0DBFB12E5B23DB001284FE /* ContextMenuExampleViewController.swift in Sources */,
 				9E0DBF6F2E5A14D4001284FE /* HomeRootViewController.swift in Sources */,
 				9E0DBFA72E5B1276001284FE /* RadioButtonExampleViewController.swift in Sources */,
@@ -556,6 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8XKR749A94;
@@ -574,6 +579,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "xtguiyi.ios-learned";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -581,7 +587,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -592,6 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8XKR749A94;
@@ -610,13 +617,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "xtguiyi.ios-learned";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -2,6 +2,7 @@
 
 这个文件为 Claude Code (claude.ai/code) 在这个代码库中工作时提供指导。
 
+永远回答中文
 ## 项目概述
 
 这是一个 iOS 学习项目，主要用于学习 iOS 开发的基础概念和实践。项目使用 Swift 语言和 UIKit 框架开发，采用纯代码 + SnapKit 进行界面布局，实现了完整的 TabBar 架构和可复用的 UI 组件系统。

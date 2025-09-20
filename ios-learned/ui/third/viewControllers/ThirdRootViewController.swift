@@ -67,14 +67,9 @@ class ThirdRootViewController: BaseViewController {
         ]
         
         controller.updateData(listData)
+      
         
-        // 设置点击回调
-        controller.onItemSelected = { [weak self] model, index in
-            print("第三方库页 - 选择了第 \(index) 项：\(model.title)")
-            // 这里可以进行页面跳转等操作
-        }
-        
-        addChild(childViewController: controller) { childView in
+        addChildController(controller) { childView in
             childView.snp.makeConstraints { make in
                 make.top.equalTo(self.headerView.snp.bottom)
                 make.left.right.bottom.equalToSuperview()
