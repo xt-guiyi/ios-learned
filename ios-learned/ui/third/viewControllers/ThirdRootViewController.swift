@@ -46,23 +46,13 @@ class ThirdRootViewController: BaseViewController {
         
         // 配置列表数据
         let listData = [
-            ListItemModel(title: "mvc架构", subtitle: "项目级别的mvc架构") {
-                print("点击了：SnapKit")
+            ListItemModel(title: "mvvm架构", subtitle: "标准MVVM架构，集成Moya+RxSwift+Alamofire+Kingfisher") {
+                let userListVC = UserListViewController()
+                self.navigationController?.pushViewController(userListVC, animated: true)
             },
             ListItemModel(title: "自定义相机界面", subtitle: "定制一个相机界面，可以加上识别人脸功能") {
-                print("点击了：SnapKit")
-            },
-            ListItemModel(title: "语音转文字功能", subtitle: "识别语音转文字") {
-                print("点击了：Alamofire")
-            },
-            ListItemModel(title: "app一键登陆", subtitle: "使用运营商提供的一键登陆功能") {
-                print("点击了：Kingfisher")
-            },
-            ListItemModel(title: "ai回答", subtitle: "返回ai的答案") {
-                print("点击了：RxSwift")
-            },
-            ListItemModel(title: "图片视频选择，上传到腾讯云存储, 文字识别等等", subtitle: "选择图片和视频") {
-                print("点击了：Moya")
+                let cameraVC = CustomCameraViewController()
+                self.pushViewController(cameraVC)
             },
         ]
         

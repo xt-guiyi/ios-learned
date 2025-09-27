@@ -188,13 +188,22 @@ class PermissionManagerViewController: BaseViewController {
     /// 申请通讯录权限
     private func requestContactsPermission() {
         let status = CNContactStore.authorizationStatus(for: .contacts)
+        print("通讯录当前权限状态: \(status.rawValue)")
 
         switch status {
         case .notDetermined:
             let store = CNContactStore()
             store.requestAccess(for: .contacts) { [weak self] granted, error in
                 DispatchQueue.main.async {
-                    self?.showPermissionResult(permissionName: "通讯录", granted: granted)
+                    print("通讯录权限申请结果: granted=\(granted)")
+                    if let error = error {
+                        print("通讯录权限请求错误: \(error.localizedDescription)")
+                        // 在模拟器上，有时候即使有错误，granted 仍可能为 true
+                        let finalGranted = granted && error == nil
+                        self?.showPermissionResult(permissionName: "通讯录", granted: finalGranted)
+                    } else {
+                        self?.showPermissionResult(permissionName: "通讯录", granted: granted)
+                    }
                 }
             }
         case .authorized:
@@ -202,6 +211,8 @@ class PermissionManagerViewController: BaseViewController {
         case .denied, .restricted:
             showPermissionResult(permissionName: "通讯录", granted: false, denied: true)
         @unknown default:
+            print("通讯录权限状态未知")
+            showPermissionResult(permissionName: "通讯录", granted: false)
             break
         }
     }
@@ -254,7 +265,12 @@ class PermissionManagerViewController: BaseViewController {
         } else if denied {
             message = "\(permissionName)权限被拒绝，请前往设置中手动开启"
         } else {
-            message = granted ? "\(permissionName)权限申请成功" : "\(permissionName)权限申请失败"
+            if permissionName == "通讯录" && !granted {
+                // 特殊处理通讯录权限失败的情况
+                message = "\(permissionName)权限申请失败\n\n可能原因：\n1. 模拟器限制\n2. 系统版本兼容性\n3. 请在真机上测试"
+            } else {
+                message = granted ? "\(permissionName)权限申请成功" : "\(permissionName)权限申请失败"
+            }
         }
 
         let alert = UIAlertController(title: "权限结果", message: message, preferredStyle: .alert)

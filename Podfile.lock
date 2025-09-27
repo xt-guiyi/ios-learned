@@ -3,6 +3,13 @@ PODS:
   - Differentiator (5.0.0)
   - FSPagerView (0.8.3)
   - Kingfisher (8.5.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
   - RxCocoa (6.9.0):
     - RxRelay (= 6.9.0)
     - RxSwift (= 6.9.0)
@@ -26,6 +33,8 @@ DEPENDENCIES:
   - Alamofire (~> 5.10.0)
   - FSPagerView (~> 0.8.3)
   - Kingfisher (~> 8.0)
+  - Moya (~> 15.0.0)
+  - Moya/RxSwift (~> 15.0.0)
   - RxCocoa (~> 6.9.0)
   - RxDataSources (~> 5.0.0)
   - RxGesture (~> 4.0.0)
@@ -40,6 +49,7 @@ SPEC REPOS:
     - Differentiator
     - FSPagerView
     - Kingfisher
+    - Moya
     - RxCocoa
     - RxDataSources
     - RxGesture
@@ -54,6 +64,7 @@ SPEC CHECKSUMS:
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   Kingfisher: ff0d31a1f07bdff6a1ebb3ba08b8e6e567b6500c
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
@@ -63,6 +74,6 @@ SPEC CHECKSUMS:
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: 5336a720ac3a7251e3cee1040619900152c4ef30
+PODFILE CHECKSUM: a5d7dd33433523485343da5891c307a6ae71d52c
 
 COCOAPODS: 1.16.2

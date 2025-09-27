@@ -29,12 +29,10 @@ class TabbarViewController: UITabBarController {
     let thirdVC = ThirdRootViewController()
     addChildViewController(
       childViewController: thirdVC, title: "案例库", image: UIImage.third,
-      selectImage: UIImage.thirdSelect)
-  }
+      selectImage: UIImage.thirdSelect)  }
   
   private func setupTabBarAppearance() {
-    // 设置 TabBar 背景为白色
-    tabBar.backgroundColor = .white
+    // 设置 TabBar 背景为白色-X{-=    tabBar.backgroundColor = .white
     tabBar.barTintColor = .white
   }
 
