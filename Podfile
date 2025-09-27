@@ -7,6 +7,13 @@ target 'ios-learned' do
   pod 'SnapKit', '~> 5.7.0'
   pod 'Toast-Swift', '~> 5.1.1'
   pod 'FSPagerView', '~> 0.8.3'
+  pod 'Alamofire', '~> 5.10.0'
+  pod 'RxSwift', '~> 6.9.0'
+  pod 'RxCocoa', '~> 6.9.0'
+  pod 'RxDataSources', '~> 5.0.0'
+  pod 'RxKeyboard', '~> 2.0.0'
+  pod 'RxGesture', '~> 4.0.0'
+  pod 'Kingfisher', '~> 8.0'
   # Pods for ios-learned
 
 end

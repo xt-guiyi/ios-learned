@@ -82,4 +82,35 @@ extension UIColor {
             return light
         }
     }
+
+    /// 获取更深的颜色
+    /// - Parameter percentage: 变深的百分比（0-1）
+    /// - Returns: 调整后的颜色
+    func darker(by percentage: CGFloat = 0.3) -> UIColor {
+        return adjust(by: -abs(percentage))
+    }
+
+    /// 获取更浅的颜色
+    /// - Parameter percentage: 变浅的百分比（0-1）
+    /// - Returns: 调整后的颜色
+    func lighter(by percentage: CGFloat = 0.3) -> UIColor {
+        return adjust(by: abs(percentage))
+    }
+
+    /// 调整颜色亮度
+    /// - Parameter percentage: 调整百分比，正数变亮，负数变暗
+    /// - Returns: 调整后的颜色
+    func adjust(by percentage: CGFloat) -> UIColor {
+        var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
+
+        if getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+            return UIColor(
+                red: min(red + percentage, 1.0),
+                green: min(green + percentage, 1.0),
+                blue: min(blue + percentage, 1.0),
+                alpha: alpha
+            )
+        }
+        return self
+    }
 }
