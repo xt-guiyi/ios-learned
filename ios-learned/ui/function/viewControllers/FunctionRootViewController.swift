@@ -101,6 +101,10 @@ class FunctionRootViewController: BaseViewController {
             ListItemModel(title: "响应式生态系统", subtitle: "RxCocoa、RxDataSources等") {
                 let rxEcosystemVC = RxEcosystemViewController()
                 self.pushViewController(rxEcosystemVC)
+            },
+            ListItemModel(title: "Combine用法", subtitle: "学习Combine各种用法") {
+                let combineVC = CombineViewController()
+                self.pushViewController(combineVC)
             }
         ]
         

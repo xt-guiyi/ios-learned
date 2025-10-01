@@ -1,18 +1,17 @@
 //
-//  UserListViewController.swift
+//  CombineUserListViewController.swift
 //  ios-learned
 //
-//  Created by Claude on 2025/9/27.
+//  Created by Claude on 2025/10/01.
 //
 
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
+import Combine
 import Toast_Swift
 
-/// MVVM架构的用户列表页面
-class UserListViewController: UIViewController {
+/// Combine MVVM架构的用户列表页面
+class CombineUserListViewController: UIViewController {
     // MARK: - UI Components
     /// 导航栏
     private let navigationBar = CustomNavigationBar()
@@ -49,13 +48,13 @@ class UserListViewController: UIViewController {
 
     // MARK: - Properties
     /// ViewModel
-    private let viewModel = UserListViewModel()
+    private let viewModel = CombineUserListViewModel()
 
-    /// DisposeBag
-    private let disposeBag = DisposeBag()
+    /// Cancellables 集合
+    private var cancellables = Set<AnyCancellable>()
 
     /// 搜索关键词防抖
-    private let searchSubject = PublishSubject<String>()
+    private let searchSubject = PassthroughSubject<String, Never>()
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -63,14 +62,8 @@ class UserListViewController: UIViewController {
         setupUI()
         setupBindings()
 
-        // 开发模式：测试网络层
-        #if DEBUG
-        let networkTest = NetworkTest()
-        networkTest.runAllTests()
-        #endif
-
         // 触发初始加载
-        viewModel.loadTrigger.accept(())
+        viewModel.loadTrigger.send()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -94,7 +87,7 @@ class UserListViewController: UIViewController {
 
     /// 设置导航栏
     private func setupNavigationBar() {
-        navigationBar.title = "MVVM 用户列表"
+        navigationBar.title = "MVVM + Combine"
         navigationBar.onBackButtonTapped = { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
@@ -118,7 +111,8 @@ class UserListViewController: UIViewController {
         tableView.backgroundColor = UIColor.systemGroupedBackground
         tableView.separatorStyle = .none
         tableView.delegate = self
-        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: UserTableViewCell.identifier)
+        tableView.dataSource = self
+        tableView.register(CombineUserTableViewCell.self, forCellReuseIdentifier: CombineUserTableViewCell.identifier)
         tableView.refreshControl = refreshControl
 
         view.addSubview(tableView)
@@ -186,7 +180,6 @@ class UserListViewController: UIViewController {
         view.addSubview(addUserButton)
     }
 
-
     /// 设置约束
     private func setupConstraints() {
         // 导航栏约束
@@ -243,8 +236,6 @@ class UserListViewController: UIViewController {
             make.width.equalTo(120)
             make.height.equalTo(44)
         }
-        
-        
 
         // 加载指示器约束
         loadingIndicator.snp.makeConstraints { make in
@@ -261,7 +252,7 @@ class UserListViewController: UIViewController {
     }
 
     // MARK: - Bindings
-    /// 设置RxSwift绑定
+    /// 设置 Combine 绑定
     private func setupBindings() {
         // 输入绑定
         setupInputBindings()
@@ -276,106 +267,120 @@ class UserListViewController: UIViewController {
     /// 设置输入绑定
     private func setupInputBindings() {
         // 刷新控件绑定
-        refreshControl.rx.controlEvent(.valueChanged)
-            .bind(to: viewModel.refreshTrigger)
-            .disposed(by: disposeBag)
+        refreshControl.publisher(for: .valueChanged)
+            .sink { [weak self] _ in
+                self?.viewModel.refreshTrigger.send()
+            }
+            .store(in: &cancellables)
 
         // 重试按钮绑定
-        retryButton.rx.tap
-            .bind(to: viewModel.retryTrigger)
-            .disposed(by: disposeBag)
-        
-       
+        retryButton.publisher(for: .touchUpInside)
+            .sink { [weak self] _ in
+                self?.viewModel.retryTrigger.send()
+            }
+            .store(in: &cancellables)
 
         // 添加用户按钮绑定
-        addUserButton.rx.tap
-            .subscribe(onNext: { [weak self] in
+        addUserButton.publisher(for: .touchUpInside)
+            .sink { [weak self] _ in
                 self?.showAddUserDialog()
-            })
-            .disposed(by: disposeBag)
+            }
+            .store(in: &cancellables)
     }
 
     /// 设置输出绑定
     private func setupOutputBindings() {
         // 用户列表绑定
-        viewModel.users
-            .bind(to: tableView.rx.items(cellIdentifier: UserTableViewCell.identifier, cellType: UserTableViewCell.self)) { row, user, cell in
-                cell.configure(with: user)
+        viewModel.$users
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
             }
-            .disposed(by: disposeBag)
+            .store(in: &cancellables)
 
         // 加载状态绑定
-        viewModel.isLoading
-            .drive(onNext: { [weak self] isLoading in
+        viewModel.$isLoading
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoading in
                 if isLoading {
                     self?.loadingIndicator.startAnimating()
                 } else {
                     self?.loadingIndicator.stopAnimating()
                 }
-            })
-            .disposed(by: disposeBag)
+            }
+            .store(in: &cancellables)
 
         // 刷新状态绑定
-        viewModel.isRefreshing
-            .drive(refreshControl.rx.isRefreshing)
-            .disposed(by: disposeBag)
+        viewModel.$isRefreshing
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isRefreshing in
+                if !isRefreshing {
+                    self?.refreshControl.endRefreshing()
+                }
+            }
+            .store(in: &cancellables)
 
         // 空状态绑定
-        viewModel.isEmpty
-            .map { !$0 }
-            .drive(emptyStateView.rx.isHidden)
-            .disposed(by: disposeBag)
+        viewModel.$isEmpty
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isEmpty in
+                self?.emptyStateView.isHidden = !isEmpty
+            }
+            .store(in: &cancellables)
 
         // 错误处理绑定
-        viewModel.error
+        viewModel.$error
             .compactMap { $0 }
-            .drive(onNext: { [weak self] error in
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] error in
                 self?.showError(error)
-            })
-            .disposed(by: disposeBag)
-
-        // 用户选择绑定
-        tableView.rx.modelSelected(MVVMUser.self)
-            .bind(to: viewModel.selectUserTrigger)
-            .disposed(by: disposeBag)
+            }
+            .store(in: &cancellables)
 
         // 用户选择事件绑定
         viewModel.userSelected
-            .drive(onNext: { [weak self] user in
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] user in
                 self?.showUserDetail(user)
-            })
-            .disposed(by: disposeBag)
+            }
+            .store(in: &cancellables)
 
         // 删除成功绑定
         viewModel.deleteSuccess
             .filter { !$0.isEmpty }
-            .drive(onNext: { [weak self] message in
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] message in
                 self?.view.makeToast(message, duration: 2.0, position: .top)
-            })
-            .disposed(by: disposeBag)
+            }
+            .store(in: &cancellables)
 
         // 删除失败绑定
         viewModel.deleteError
-            .drive(onNext: { [weak self] error in
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] error in
                 self?.showError(error)
-            })
-            .disposed(by: disposeBag)
+            }
+            .store(in: &cancellables)
     }
 
     /// 设置搜索绑定
     private func setupSearchBindings() {
         // 绑定搜索框文本变化
-        searchTextField.rx.text.orEmpty
-            .bind(to: searchSubject)
-            .disposed(by: disposeBag)
+        NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: searchTextField)
+            .compactMap { ($0.object as? UITextField)?.text }
+            .sink { [weak self] text in
+                self?.searchSubject.send(text)
+            }
+            .store(in: &cancellables)
 
+        // 搜索防抖处理
         searchSubject
-            .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
-            .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] keyword in
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .removeDuplicates()
+            .sink { [weak self] keyword in
                 self?.viewModel.searchUsers(keyword: keyword)
-            })
-            .disposed(by: disposeBag)
+            }
+            .store(in: &cancellables)
     }
 
     // MARK: - User Actions
@@ -443,7 +448,7 @@ class UserListViewController: UIViewController {
         let alert = UIAlertController(title: "用户详情", message: message, preferredStyle: .alert)
 
         let deleteAction = UIAlertAction(title: "删除", style: .destructive) { [weak self] _ in
-            self?.viewModel.deleteUserTrigger.accept(user)
+            self?.viewModel.deleteUserTrigger.send(user)
         }
 
         let editAction = UIAlertAction(title: "编辑", style: .default) { [weak self] _ in
@@ -520,8 +525,28 @@ class UserListViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
+extension CombineUserListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.users.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: CombineUserTableViewCell.identifier,
+            for: indexPath
+        ) as? CombineUserTableViewCell else {
+            return UITableViewCell()
+        }
+
+        let user = viewModel.users[indexPath.row]
+        cell.configure(with: user)
+        return cell
+    }
+}
+
 // MARK: - UITableViewDelegate
-extension UserListViewController: UITableViewDelegate {
+extension CombineUserListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -530,14 +555,18 @@ extension UserListViewController: UITableViewDelegate {
         return 96
     }
 
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let users = viewModel.users.value
-        guard indexPath.row < users.count else { return nil }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = viewModel.users[indexPath.row]
+        viewModel.selectUserTrigger.send(user)
+    }
 
-        let user = users[indexPath.row]
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard indexPath.row < viewModel.users.count else { return nil }
+
+        let user = viewModel.users[indexPath.row]
 
         let deleteAction = UIContextualAction(style: .destructive, title: "删除") { [weak self] _, _, completion in
-            self?.viewModel.deleteUserTrigger.accept(user)
+            self?.viewModel.deleteUserTrigger.send(user)
             completion(true)
         }
 
@@ -555,3 +584,54 @@ extension UserListViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UIControl Publisher Extension
+extension UIControl {
+    /// 创建 UIControl 事件的 Publisher
+    /// - Parameter event: 控件事件
+    /// - Returns: 事件 Publisher
+    func publisher(for event: UIControl.Event) -> AnyPublisher<Void, Never> {
+        return ControlPublisher(control: self, event: event)
+            .eraseToAnyPublisher()
+    }
+}
+
+/// UIControl 事件的自定义 Publisher
+struct ControlPublisher: Publisher {
+    typealias Output = Void
+    typealias Failure = Never
+
+    let control: UIControl
+    let event: UIControl.Event
+
+    func receive<S>(subscriber: S) where S: Subscriber, Failure == S.Failure, Output == S.Input {
+        let subscription = ControlSubscription(subscriber: subscriber, control: control, event: event)
+        subscriber.receive(subscription: subscription)
+    }
+}
+
+/// UIControl 订阅
+final class ControlSubscription<S: Subscriber>: Subscription where S.Input == Void, S.Failure == Never {
+    private var subscriber: S?
+    private weak var control: UIControl?
+    private let event: UIControl.Event
+
+    init(subscriber: S, control: UIControl, event: UIControl.Event) {
+        self.subscriber = subscriber
+        self.control = control
+        self.event = event
+
+        control.addTarget(self, action: #selector(handleEvent), for: event)
+    }
+
+    func request(_ demand: Subscribers.Demand) {}
+
+    func cancel() {
+        subscriber = nil
+        control?.removeTarget(self, action: #selector(handleEvent), for: event)
+        control = nil
+    }
+
+    @objc private func handleEvent() {
+        _ = subscriber?.receive()
+    }
+}

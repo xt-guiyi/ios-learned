@@ -5,6 +5,8 @@ PODS:
   - Kingfisher (8.5.0)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
+  - Moya/Combine (15.0.0):
+    - Moya/Core
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (15.0.0):
@@ -34,6 +36,7 @@ DEPENDENCIES:
   - FSPagerView (~> 0.8.3)
   - Kingfisher (~> 8.0)
   - Moya (~> 15.0.0)
+  - Moya/Combine (~> 15.0.0)
   - Moya/RxSwift (~> 15.0.0)
   - RxCocoa (~> 6.9.0)
   - RxDataSources (~> 5.0.0)
@@ -74,6 +77,6 @@ SPEC CHECKSUMS:
   SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: a5d7dd33433523485343da5891c307a6ae71d52c
+PODFILE CHECKSUM: 50aa26b356a2b9836d0b77111ec2bbd964e3e878
 
 COCOAPODS: 1.16.2

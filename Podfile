@@ -10,6 +10,7 @@ target 'ios-learned' do
   pod 'Alamofire', '~> 5.10.0'
   pod 'Moya', '~> 15.0.0'
   pod 'Moya/RxSwift', '~> 15.0.0'
+  pod 'Moya/Combine', '~> 15.0.0'
   pod 'RxSwift', '~> 6.9.0'
   pod 'RxCocoa', '~> 6.9.0'
   pod 'RxDataSources', '~> 5.0.0'

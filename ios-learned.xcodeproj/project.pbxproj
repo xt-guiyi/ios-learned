@@ -85,6 +85,11 @@
 		9EAE98672E76E7B9001DE57E /* StoryboardExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE98662E76E7B9001DE57E /* StoryboardExampleViewController.swift */; };
 		9EAE986B2E7705E3001DE57E /* NibExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE98692E7705E3001DE57E /* NibExampleViewController.swift */; };
 		9EAE986C2E7705E3001DE57E /* NibExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAE986A2E7705E3001DE57E /* NibExampleViewController.xib */; };
+		9EE8523F2E8D25E000F28480 /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE8523E2E8D25E000F28480 /* CombineViewController.swift */; };
+		9EE852482E8D31D600F28480 /* CombineUserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE852422E8D31D600F28480 /* CombineUserListViewModel.swift */; };
+		9EE852492E8D31D600F28480 /* CombineUserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE852442E8D31D600F28480 /* CombineUserListViewController.swift */; };
+		9EE8524A2E8D31D600F28480 /* CombineUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE852402E8D31D600F28480 /* CombineUserService.swift */; };
+		9EE8524B2E8D31D600F28480 /* CombineUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE852452E8D31D600F28480 /* CombineUserTableViewCell.swift */; };
 		C78082A92D190790B174B0 /* SliderExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD5D4E03181AE46412C3 /* SliderExampleViewController.swift */; };
 		D605CCD3C357E2A5149CAC /* PickerViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED300A2AFACD9A85A1BF11 /* PickerViewExampleViewController.swift */; };
 		DF6C389E802A6C7CFF3515 /* PageControlExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2346A91C57973B3BC465 /* PageControlExampleViewController.swift */; };
@@ -171,6 +176,11 @@
 		9EAE98662E76E7B9001DE57E /* StoryboardExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExampleViewController.swift; sourceTree = "<group>"; };
 		9EAE98692E7705E3001DE57E /* NibExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibExampleViewController.swift; sourceTree = "<group>"; };
 		9EAE986A2E7705E3001DE57E /* NibExampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibExampleViewController.xib; sourceTree = "<group>"; };
+		9EE8523E2E8D25E000F28480 /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
+		9EE852402E8D31D600F28480 /* CombineUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUserService.swift; sourceTree = "<group>"; };
+		9EE852422E8D31D600F28480 /* CombineUserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUserListViewModel.swift; sourceTree = "<group>"; };
+		9EE852442E8D31D600F28480 /* CombineUserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUserListViewController.swift; sourceTree = "<group>"; };
+		9EE852452E8D31D600F28480 /* CombineUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineUserTableViewCell.swift; sourceTree = "<group>"; };
 		CE8343DA2AFDFB10B8E766 /* ActivityIndicatorExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorExampleViewController.swift; sourceTree = "<group>"; };
 		DE41D1BA0E479416F6B6FE32 /* Pods-ios-learned.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-learned.debug.xcconfig"; path = "Target Support Files/Pods-ios-learned/Pods-ios-learned.debug.xcconfig"; sourceTree = "<group>"; };
 		ED300A2AFACD9A85A1BF11 /* PickerViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewExampleViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +191,8 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9ECE57DC2E7D1F4900E656C8 /* 学习文档 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = "学习文档";
 			sourceTree = "<group>";
 		};
@@ -339,6 +351,7 @@
 		9E0DBF602E5A1392001284FE /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9EE8523E2E8D25E000F28480 /* CombineViewController.swift */,
 				9E2F26B72E87DBC500BEB278 /* AudioPlayerViewController.swift */,
 				9E2F26B82E87DBC500BEB278 /* ConcurrencyViewController.swift */,
 				9E2F26B92E87DBC500BEB278 /* GestureViewController.swift */,
@@ -361,6 +374,7 @@
 		9E0DBF612E5A1397001284FE /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9EE852472E8D31D600F28480 /* mvvmCombineExample */,
 				9E2F26F92E87F50800BEB278 /* CustomCameraViewController.swift */,
 				9E2F26D12E87E95500BEB278 /* mvvmExample */,
 				9E0DBF742E5A1638001284FE /* ThirdRootViewController.swift */,
@@ -530,6 +544,41 @@
 			path = nibExample;
 			sourceTree = "<group>";
 		};
+		9EE852412E8D31D600F28480 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				9EE852402E8D31D600F28480 /* CombineUserService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		9EE852432E8D31D600F28480 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9EE852422E8D31D600F28480 /* CombineUserListViewModel.swift */,
+			);
+			path = viewModels;
+			sourceTree = "<group>";
+		};
+		9EE852462E8D31D600F28480 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				9EE852442E8D31D600F28480 /* CombineUserListViewController.swift */,
+				9EE852452E8D31D600F28480 /* CombineUserTableViewCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		9EE852472E8D31D600F28480 /* mvvmCombineExample */ = {
+			isa = PBXGroup;
+			children = (
+				9EE852412E8D31D600F28480 /* services */,
+				9EE852432E8D31D600F28480 /* viewModels */,
+				9EE852462E8D31D600F28480 /* views */,
+			);
+			path = mvvmCombineExample;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -635,13 +684,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ios-learned/Pods-ios-learned-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ios-learned/Pods-ios-learned-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -700,6 +745,7 @@
 				9E0DBF9E2E5AF4FC001284FE /* BaseViewController.swift in Sources */,
 				9E0DBF712E5A14E5001284FE /* FunctionRootViewController.swift in Sources */,
 				9E0DBFAD2E5B1899001284FE /* BottomNavigationExampleViewController.swift in Sources */,
+				9EE8523F2E8D25E000F28480 /* CombineViewController.swift in Sources */,
 				9E0DBF972E5A5724001284FE /* CustomNavigationBar.swift in Sources */,
 				9E0DBFAF2E5B1C23001284FE /* StackViewExampleViewController.swift in Sources */,
 				9E0DBF992E5AF3B4001284FE /* TextExampleViewController.swift in Sources */,
@@ -726,6 +772,10 @@
 				D605CCD3C357E2A5149CAC /* PickerViewExampleViewController.swift in Sources */,
 				4A42611E27E78DBC6352BE /* DatePickerExampleViewController.swift in Sources */,
 				C78082A92D190790B174B0 /* SliderExampleViewController.swift in Sources */,
+				9EE852482E8D31D600F28480 /* CombineUserListViewModel.swift in Sources */,
+				9EE852492E8D31D600F28480 /* CombineUserListViewController.swift in Sources */,
+				9EE8524A2E8D31D600F28480 /* CombineUserService.swift in Sources */,
+				9EE8524B2E8D31D600F28480 /* CombineUserTableViewCell.swift in Sources */,
 				30E798F0C1205466799160 /* StepperExampleViewController.swift in Sources */,
 				DF6C389E802A6C7CFF3515 /* PageControlExampleViewController.swift in Sources */,
 				93C3BC1D6784C163636B45 /* ActivityIndicatorExampleViewController.swift in Sources */,

@@ -46,9 +46,13 @@ class ThirdRootViewController: BaseViewController {
         
         // 配置列表数据
         let listData = [
-            ListItemModel(title: "mvvm架构", subtitle: "标准MVVM架构，集成Moya+RxSwift+Alamofire+Kingfisher") {
+            ListItemModel(title: "mvvm架构+RxSwift", subtitle: "标准MVVM架构，集成Moya+RxSwift+Alamofire+Kingfisher") {
                 let userListVC = UserListViewController()
                 self.navigationController?.pushViewController(userListVC, animated: true)
+            },
+            ListItemModel(title: "mvvm架构+Combine", subtitle: "标准MVVM架构，使用Combine替代RxSwift") {
+                let combineUserListVC = CombineUserListViewController()
+                self.navigationController?.pushViewController(combineUserListVC, animated: true)
             },
             ListItemModel(title: "自定义相机界面", subtitle: "定制一个相机界面，可以加上识别人脸功能") {
                 let cameraVC = CustomCameraViewController()
