@@ -143,7 +143,7 @@ class SystemBarViewController: BaseViewController {
         bottomSafeAreaSectionLabel.textColor = .mainTextColor
 
         // 显示底部指示器开关
-        showBottomIndicatorLabel.text = "显示底部安全区域指示器"
+        showBottomIndicatorLabel.text = "显示底部安全区域"
         showBottomIndicatorLabel.font = .systemFont(ofSize: 16)
         showBottomIndicatorLabel.textColor = .mainTextColor
 

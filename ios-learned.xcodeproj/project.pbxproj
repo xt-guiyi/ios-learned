@@ -344,7 +344,6 @@
 				9E2F26B92E87DBC500BEB278 /* GestureViewController.swift */,
 				9E2F26BA2E87DBC500BEB278 /* KingfisherViewController.swift */,
 				9E2F26BB2E87DBC500BEB278 /* LocalStorageViewController.swift */,
-				9E2F26BC2E87DBC500BEB278 /* moyaExample */,
 				9E2F26BD2E87DBC500BEB278 /* NetworkRequestViewController.swift */,
 				9E2F26BE2E87DBC500BEB278 /* PermissionManagerViewController.swift */,
 				9E2F26BF2E87DBC500BEB278 /* RxEcosystemViewController.swift */,
@@ -453,13 +452,6 @@
 				9E2F26B22E87DA5200BEB278 /* FloatingBallView.swift */,
 			);
 			path = floatingBall;
-			sourceTree = "<group>";
-		};
-		9E2F26BC2E87DBC500BEB278 /* moyaExample */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = moyaExample;
 			sourceTree = "<group>";
 		};
 		9E2F26D12E87E95500BEB278 /* mvvmExample */ = {
